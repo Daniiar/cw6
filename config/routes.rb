@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get '/lenta' => 'photographies#lenta', as: :photography_lenta
+  get '/gallery' => 'photographies#gallery', as: :photography_gallery
 
 end

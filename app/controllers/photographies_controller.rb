@@ -48,7 +48,7 @@ class PhotographiesController < ApplicationController
     redirect_to photographies_path
   end
 
-  def lenta
+  def gallery
     @photographies = Photography.all.order(created_at: :desc)
   end
 

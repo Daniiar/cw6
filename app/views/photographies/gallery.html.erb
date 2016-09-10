@@ -17,19 +17,10 @@
 						<td><%= image_tag photography.image.url(:thumb) %></td>
 						<td><%= photography.name %></td>
 						<td><%= photography.user.name %></td>
-						<td><%= link_to 'измненить', edit_photography_path(photography) %></td>	
 						<td><%= link_to 'просмотр', photography_path(photography) %></td>				
-						<td><%= link_to 'удалить', photography_path(photography), method: :delete, data: {confirm: 'Вы дествительно хотите удалить?'} %></td>	
 					</tr>
 				<% end %>
 			<% end %>
 		</table>
 	</div>
-
-<% else %>
-	<% @photographies.each do |photograpy| %>
-		<%= photograpy.name %>
-		<%= photograpy.image %>
-		<%= photograpy.user.name %>
-	<% end %>
 <% end %>
