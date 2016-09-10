@@ -15,35 +15,42 @@ class PhotographiesController < ApplicationController
 
   def create
   	@photography = Photography.new(photography_params)
-  	image = params[:photography][:image]
-  	unless image.nil?
-      @photography.image = params[:photography][:image].original_filename
-      upload_picture
-    end
   	if @photography.save
-  		redirect_to photographies_path
+
+      redirect_to photographies_path
   	else
   		render 'new'
   	end
   end
 
-  # def show
-  # 	@photography = Photography.find(params[:id])
-  #   @comment = Comment.new
-  #   @comments = Comment.all
-  # end
+  def edit
+    @photography = Photography.find(params[:id])
+  end
 
-  # def destroy
-  # 	@photography = Photography.find(params[:id])
-  # 	@photography.destroy
+  def update
+    @photography = Photography.find(params[:id])
+    if @photography.update(photography_params)
+      upload_picture
+      redirect_to photographies_path
+    else
+      render 'edit'
+    end
+  end
 
-  #   redirect_to photographies_path
-  # end
+  def show
+  	@photography = Photography.find(params[:id])
+  end
 
-  # def lenta
-  #   @users = User.all
-  #   @photographies = Photography.all#.comments.order(created_at: :desc)
-  # end
+  def destroy
+  	@photography = Photography.find(params[:id])
+  	@photography.destroy
+
+    redirect_to photographies_path
+  end
+
+  def lenta
+    @photographies = Photography.all.order(created_at: :desc)
+  end
 
   # def following
   #   @title = "Following"

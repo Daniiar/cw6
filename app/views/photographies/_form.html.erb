@@ -1,10 +1,10 @@
 <div class="container">
-	<%= form_for @photogrphy do |f| %>
-		<% if @photogrphy.errors.any? %>
+	<%= form_for @photography do |f| %>
+		<% if @photography.errors.any? %>
 			<div class="errors">
-				Total errors: <%= @photogrphy.errors.count %>
+				Total errors: <%= @photography.errors.count %>
 				<ul>
-					<%= @photogrphy.errors.full_messages.each do |message| %>
+					<%= @photography.errors.full_messages.each do |message| %>
 					<li><%= message %></li>
 					<% end %>
 				</ul>
@@ -12,12 +12,12 @@
 		<% end %>	
 
 		<p>
-			<%= f.label 'Photography' %><br/>
+			<%= f.label 'Name' %><br/>
 			<%= f.text_field :name %>
 		</p>
 
 		<p>
-			<%= f.label 'Изображение фотографа' %><br />
+			<%= f.label 'Photography' %><br />
 			<%= f.file_field :image %>
 		</p>
 
