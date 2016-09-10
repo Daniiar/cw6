@@ -1,0 +1,30 @@
+<div class="container">
+	<%= form_for @photogrphy do |f| %>
+		<% if @photogrphy.errors.any? %>
+			<div class="errors">
+				Total errors: <%= @photogrphy.errors.count %>
+				<ul>
+					<%= @photogrphy.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>	
+
+		<p>
+			<%= f.label 'Photography' %><br/>
+			<%= f.text_field :name %>
+		</p>
+
+		<p>
+			<%= f.label 'Изображение фотографа' %><br />
+			<%= f.file_field :image %>
+		</p>
+
+		<%= f.hidden_field :user_id, :value => current_user.id %>
+
+		<p>
+			<%= f.submit 'save' %>
+		</p>
+	<% end %>
+</div>
