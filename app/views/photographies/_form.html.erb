@@ -1,10 +1,19 @@
 <div class="container">
+<<<<<<< HEAD
 	<%= form_for @photography do |f| %>
 		<% if @photography.errors.any? %>
 			<div class="errors">
 				Total errors: <%= @photography.errors.count %>
 				<ul>
 					<%= @photography.errors.full_messages.each do |message| %>
+=======
+	<%= form_for @photogrphy do |f| %>
+		<% if @photogrphy.errors.any? %>
+			<div class="errors">
+				Total errors: <%= @photogrphy.errors.count %>
+				<ul>
+					<%= @photogrphy.errors.full_messages.each do |message| %>
+>>>>>>> 131339d46934b4580b06df02d2c30365ff2a98f9
 					<li><%= message %></li>
 					<% end %>
 				</ul>
@@ -12,12 +21,20 @@
 		<% end %>	
 
 		<p>
+<<<<<<< HEAD
 			<%= f.label 'Name' %><br/>
+=======
+			<%= f.label 'Photography' %><br/>
+>>>>>>> 131339d46934b4580b06df02d2c30365ff2a98f9
 			<%= f.text_field :name %>
 		</p>
 
 		<p>
+<<<<<<< HEAD
 			<%= f.label 'Photography' %><br />
+=======
+			<%= f.label 'Изображение фотографа' %><br />
+>>>>>>> 131339d46934b4580b06df02d2c30365ff2a98f9
 			<%= f.file_field :image %>
 		</p>
 

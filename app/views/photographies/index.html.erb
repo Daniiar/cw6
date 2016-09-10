@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% if user_signed_in? %>
 	<div class="container">
 		<h1>My photographies</h1>
@@ -41,4 +42,10 @@
 		  </div>
 		</div>
 	<% end %>
+=======
+<% @photographies.each do |photograpy| %>
+	<%= photograpy.name %>
+	<%= photograpy.image %>
+	<%= photograpy.user.name %>
+>>>>>>> 131339d46934b4580b06df02d2c30365ff2a98f9
 <% end %>

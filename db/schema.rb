@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160910102714) do
+=======
+ActiveRecord::Schema.define(version: 20160910064155) do
+>>>>>>> 131339d46934b4580b06df02d2c30365ff2a98f9
 
   create_table "photographies", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
+<<<<<<< HEAD
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "user_id"
@@ -23,6 +28,10 @@ ActiveRecord::Schema.define(version: 20160910102714) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.index ["user_id"], name: "index_photographies_on_user_id"
+=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> 131339d46934b4580b06df02d2c30365ff2a98f9
   end
 
   create_table "users", force: :cascade do |t|
